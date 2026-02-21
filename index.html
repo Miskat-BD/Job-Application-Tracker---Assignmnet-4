@@ -13,9 +13,7 @@
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap" rel="stylesheet">
 
     <!-- Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
@@ -24,12 +22,12 @@
 
     <style>
         * {
-            font-family: "Google Sans", sans-serif;
+            font-family: "Geist", sans-serif;
         }
     </style>
 </head>
 
-<body>
+<body class="bg-[#F8FAFC]">
     <header class="w-10/12 mx-auto mt-14">
         <h1 class="text-2xl sm:text-[32px] text-[#002C5C] font-bold mb-5">Job Application Tracker</h1>
         <div class="main-div grid grid-cols-1 sm:grid-cols-3 gap-4">
@@ -53,12 +51,12 @@
         <!-- Available Jobs -->
         <section class="w-10/12 mx-auto flex justify-between mb-6">
             <p class="text-[#002C5C] text-xl font-semibold">Available Jobs</p>
-            <p>8 jobs</p>
+            <p id="p">8 jobs</p>
         </section>
 
         <!-- Buttons -->
         <section class="w-10/12 mx-auto flex gap-2 mb-4">
-            <button class="btn w-[80px] btn-info text-white text-[12px] font-semibold">All</button>
+            <button class="btn w-[80px] bg-[#3B82F6] text-white text-[12px] font-semibold">All</button>
             <button class="btn w-[80px] text-[12px] font-semibold">Interview</button>
             <button class="btn w-[80px] text-[12px] font-semibold">Rejected</button>
         </section>
@@ -290,6 +288,8 @@
         </section>
 
     </main>
+
+    <script src="script/script.js"></script>
 </body>
 
 </html>
