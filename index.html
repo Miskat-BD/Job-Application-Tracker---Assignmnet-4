@@ -32,16 +32,16 @@
         <h1 class="text-2xl sm:text-[32px] text-[#002C5C] font-bold mb-5">Job Application Tracker</h1>
         <div class="main-div grid grid-cols-1 sm:grid-cols-3 gap-4">
             <div class="w-[360px] bg-base-300 px-5 py-3 rounded-md">
-                <p>Total</p>
-                <h1 class="text-2xl text-[#002C5C] font-bold">8</h1>
+                <p >Total</p>
+                <h1 id="total-jobs" class="text-2xl text-[#002C5C] font-bold">8</h1>
             </div>
             <div class="w-[360px] bg-base-300 px-5 py-3 rounded-md">
                 <p>Interview</p>
-                <h1 class="text-2xl text-green-600 font-bold">0</h1>
+                <h1 id="total-interview" class="text-2xl text-green-600 font-bold">0</h1>
             </div>
             <div class="w-[360px] bg-base-300 px-5 py-3 rounded-md">
                 <p>Rejected</p>
-                <h1 class="text-2xl text-red-600 font-bold">0</h1>
+                <h1 id="total-rejected" class="text-2xl text-red-600 font-bold">0</h1>
             </div>
         </div>
         <hr class="my-8 border-gray-400">
@@ -51,18 +51,18 @@
         <!-- Available Jobs -->
         <section class="w-10/12 mx-auto flex justify-between mb-6">
             <p class="text-[#002C5C] text-xl font-semibold">Available Jobs</p>
-            <p id="p">8 jobs</p>
+            <p>8 jobs</p>
         </section>
 
         <!-- Buttons -->
-        <section class="w-10/12 mx-auto flex gap-2 mb-4">
-            <button class="btn w-[80px] bg-[#3B82F6] text-white text-[12px] font-semibold">All</button>
-            <button class="btn w-[80px] text-[12px] font-semibold">Interview</button>
-            <button class="btn w-[80px] text-[12px] font-semibold">Rejected</button>
+        <section id="buttons" class="w-10/12 mx-auto flex gap-2 mb-4">
+            <button id="all-filter-btn" onclick="toggleStyle('all-filter-btn')" class="btn w-[80px] bg-[#3B82F6] text-white text-[12px] font-semibold">All</button>
+            <button id="interview-filter-btn" class="btn w-[80px] text-[12px] font-semibold">Interview</button>
+            <button id="rejected-filter-btn" class="btn w-[80px] text-[12px] font-semibold">Rejected</button>
         </section>
 
         <!-- All Cards -->
-        <section>
+        <section id="all-cards">
             <!-- Jobs Cards 1 -->
             <section class="w-10/12 mx-auto p-6 bg-base-300 rounded-md mb-4 flex justify-between">
                 <!-- Left Side -->
@@ -289,6 +289,7 @@
 
     </main>
 
+    <script src="script/machine.js"></script>
     <script src="script/script.js"></script>
 </body>
 
