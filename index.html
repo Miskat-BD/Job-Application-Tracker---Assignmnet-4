@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Application Tracker</title>
+
+    <!-- Connect Tailwind and DaisyUI -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&display=swap"
+        rel="stylesheet">
+
+    <style>
+        *{
+            font-family: "Google Sans", sans-serif;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="w-10/12 mx-auto mt-14">
+        <h1 class="text-[32px] text-[#002C5C] font-bold mb-5">Job Application Tracker</h1>
+        <div class="main-div grid grid-cols-3 gap-4">
+            <div class="w-[360px] bg-base-300 px-5 py-3 rounded-md">
+                <p>Total</p>
+                <h1 class="text-2xl text-[#002C5C] font-bold">8</h1>
+            </div>
+            <div class="w-[360px] bg-base-300 px-5 py-3 rounded-md">
+                <p>Interview</p>
+                <h1 class="text-2xl text-green-600 font-bold">0</h1>
+            </div>
+            <div class="w-[360px] bg-base-300 px-5 py-3 rounded-md">
+                <p>Rejected</p>
+                <h1 class="text-2xl text-red-600 font-bold">0</h1>
+            </div>
+        </div>
+        <hr class="my-8 border-gray-400">
+    </header>
+</body>
+
+</html>
