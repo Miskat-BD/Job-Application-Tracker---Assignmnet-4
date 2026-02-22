@@ -31,15 +31,15 @@
     <header class="w-10/12 mx-auto mt-14">
         <h1 class="text-2xl sm:text-[32px] text-[#002C5C] font-bold mb-5">Job Application Tracker</h1>
         <div class="main-div grid grid-cols-1 sm:grid-cols-3 gap-4">
-            <div class="w-[360px] bg-base-300 px-5 py-3 rounded-md bg-[#FFFFFF]">
+            <div class="max-w-[360px] bg-base-300 px-5 py-3 rounded-md bg-[#FFFFFF] border-1 border-gray-200">
                 <p >Total</p>
                 <h1 id="total-jobs" class="text-2xl text-[#002C5C] font-bold">8</h1>
             </div>
-            <div class="w-[360px] bg-base-300 px-5 py-3 rounded-md bg-[#FFFFFF]">
+            <div class="max-w-[360px] bg-base-300 px-5 py-3 rounded-md bg-[#FFFFFF] border-1 border-gray-200">
                 <p>Interview</p>
                 <h1 id="total-interview" class="text-2xl text-green-600 font-bold">0</h1>
             </div>
-            <div class="w-[360px] bg-base-300 px-5 py-3 rounded-md bg-[#FFFFFF]">
+            <div class="max-w-[360px] bg-base-300 px-5 py-3 rounded-md bg-[#FFFFFF] border-1 border-gray-200">
                 <p>Rejected</p>
                 <h1 id="total-rejected" class="text-2xl text-red-600 font-bold">0</h1>
             </div>
@@ -57,32 +57,37 @@
         <!-- Buttons -->
         <section id="buttons" class="w-10/12 mx-auto flex gap-2 mb-4">
             <button id="all-filter-btn" onclick="toggleStyle('all-filter-btn')" class="btn w-[80px] bg-[#3B82F6] text-white text-[12px] font-semibold">All</button>
-            <button id="interview-filter-btn" class="btn w-[80px] text-[12px] font-semibold">Interview</button>
-            <button id="rejected-filter-btn" class="btn w-[80px] text-[12px] font-semibold">Rejected</button>
+            <button id="interview-filter-btn" onclick="toggleStyle('interview-filter-btn')" class="btn w-[80px] text-[12px] font-semibold">Interview</button>
+            <button id="rejected-filter-btn" onclick="toggleStyle('rejected-filter-btn')" class="btn w-[80px] text-[12px] font-semibold">Rejected</button>
         </section>
 
+        <!-- After Filter -->
+         <section id="filtered-section">
+
+         </section>
+
         <!-- All Cards -->
-        <section id="all-cards">
+        <section id="all-cards" class="w-10/12 mx-auto">
             <!-- Jobs Cards 1 -->
-            <section class="w-10/12 mx-auto p-6 bg-base-300 rounded-md mb-4 flex justify-between bg-[#FFFFFF]">
+            <section class="p-6 rounded-md mb-4 flex justify-between bg-[#FFFFFF] border-1 border-gray-200">
                 <!-- Left Side -->
                 <div class="">
-                    <h1 class="text-[#002C5C] text-[18px] font-semibold">Mobile First Corp</h1>
-                    <p class="text-[#64748B] mb-5">React Native Developer</p>
-                    <p class=" text-[14px] mb-5 text-[#64748B]">Remote
+                    <h1 class="company-name text-[#002C5C] text-[18px] font-semibold">Mobile First Corp</h1>
+                    <p class="position text-[#64748B] mb-5">React Native Developer</p>
+                    <p class="salary text-[14px] mb-5 text-[#64748B]">Remote
                         •
                         Full-time
                         •
                         $130,000 - $175,000</p>
-                    <button class="text-[#002C5C] btn btn-soft bg-[#EEF4FF]">NOT APPLIED</button>
-                    <p class="text-[14px] text-[#323B49] my-5">Build cross-platform mobile applications using React
+                   <button class="condition text-[#002C5C] btn btn-soft bg-[#EEF4FF]">NOT APPLIED</button>
+                    <p class="description text-[14px] text-[#323B49] my-5">Build cross-platform mobile applications using React
                         Native.
                         Work on products used by millions of users worldwide.</p>
 
                     <!-- Buttons- Interview and Rejected -->
                     <div class="flex gap-2">
-                        <button class="btn btn-outline btn-success">INTERVIEW</button>
-                        <button class="btn btn-outline btn-error">REJECTED</button>
+                        <button id="interview-btn" class="interview-btn btn btn-outline btn-success">INTERVIEW</button>
+                        <button id="rejected-btn" class="rejected-btn btn btn-outline btn-error">REJECTED</button>
                     </div>
                 </div>
 
@@ -92,24 +97,24 @@
                 </div>
             </section>
             <!-- Jobs Cards 2 -->
-            <section class="w-10/12 mx-auto p-6  rounded-md mb-4 flex justify-between bg-[#FFFFFF]">
+            <section class="p-6  rounded-md mb-4 flex justify-between bg-[#FFFFFF] border-1 border-gray-200">
                 <!-- Left Side -->
                 <div class="">
-                    <h1 class="text-[#002C5C] text-[18px] font-semibold">WebFlow Agency</h1>
-                    <p class="text-[#64748B] mb-5">Web Designer & Developer</p>
-                    <p class=" text-[14px] mb-5 text-[#64748B]">Los Angeles, CA
+                    <h1 class="company-name text-[#002C5C] text-[18px] font-semibold">WebFlow Agency</h1>
+                    <p class="position text-[#64748B] mb-5">Web Designer & Developer</p>
+                    <p class="salary text-[14px] mb-5 text-[#64748B]">Los Angeles, CA
                         •
                         Part-time
                         •
                         $80,000 - $120,000</p>
-                    <button class="text-[#002C5C] btn btn-soft bg-[#EEF4FF]">NOT APPLIED</button>
-                    <p class="text-[14px] text-[#323B49] my-5">Create stunning web experiences for high-profile clients.
+                    <button class="condition text-[#002C5C] btn btn-soft bg-[#EEF4FF]">NOT APPLIED</button>
+                    <p class="description text-[14px] text-[#323B49] my-5">Create stunning web experiences for high-profile clients.
                         Must have portfolio and experience with modern web design trends.</p>
 
                     <!-- Buttons- Interview and Rejected -->
                     <div class="flex gap-2">
-                        <button class="btn btn-outline btn-success">INTERVIEW</button>
-                        <button class="btn btn-outline btn-error">REJECTED</button>
+                        <button id="interview-btn" class="interview-btn btn btn-outline btn-success">INTERVIEW</button>
+                        <button id="rejected-btn" class="rejected-btn btn btn-outline btn-error">REJECTED</button>
                     </div>
                 </div>
 
@@ -119,24 +124,24 @@
                 </div>
             </section>
             <!-- Jobs Cards 3 -->
-            <section class="w-10/12 mx-auto p-6  rounded-md mb-4 flex justify-between bg-[#FFFFFF]">
+            <section class="p-6  rounded-md mb-4 flex justify-between bg-[#FFFFFF] border-1 border-gray-200">
                 <!-- Left Side -->
                 <div class="">
-                    <h1 class="text-[#002C5C] text-[18px] font-semibold">DataViz Solutions</h1>
-                    <p class="text-[#64748B] mb-5">Data Visualization Specialist</p>
-                    <p class=" text-[14px] mb-5 text-[#64748B]">Boston, MA
+                    <h1 class="company-name text-[#002C5C] text-[18px] font-semibold">DataViz Solutions</h1>
+                    <p class="position text-[#64748B] mb-5">Data Visualization Specialist</p>
+                    <p class="salary text-[14px] mb-5 text-[#64748B]">Boston, MA
                         •
                         Full-time
                         •
                         $125,000 - $165,000</p>
-                    <button class="text-[#002C5C] btn btn-soft bg-[#EEF4FF]">NOT APPLIED</button>
-                    <p class="text-[14px] text-[#323B49] my-5">Create stunning web experiences for high-profile clients.
+                    <button class="condition text-[#002C5C] btn btn-soft bg-[#EEF4FF]">NOT APPLIED</button>
+                    <p class="description text-[14px] text-[#323B49] my-5">Create stunning web experiences for high-profile clients.
                         Must have portfolio and experience with modern web design trends.</p>
 
                     <!-- Buttons- Interview and Rejected -->
                     <div class="flex gap-2">
-                        <button class="btn btn-outline btn-success">INTERVIEW</button>
-                        <button class="btn btn-outline btn-error">REJECTED</button>
+                        <button id="interview-btn" class="interview-btn btn btn-outline btn-success">INTERVIEW</button>
+                        <button id="rejected-btn" class="rejected-btn btn btn-outline btn-error">REJECTED</button>
                     </div>
                 </div>
 
@@ -146,7 +151,7 @@
                 </div>
             </section>
             <!-- Jobs Cards 4 -->
-            <section class="w-10/12 mx-auto p-6  rounded-md mb-4 flex justify-between bg-[#FFFFFF]">
+            <section class="p-6  rounded-md mb-4 flex justify-between bg-[#FFFFFF] border-1 border-gray-200">
                 <!-- Left Side -->
                 <div class="">
                     <h1 class="text-[#002C5C] text-[18px] font-semibold">CloudFirst Inc</h1>
@@ -174,7 +179,7 @@
                 </div>
             </section>
             <!-- Jobs Cards 5 -->
-            <section class="w-10/12 mx-auto p-6  rounded-md mb-4 flex justify-between bg-[#FFFFFF]">
+            <section class="p-6  rounded-md mb-4 flex justify-between bg-[#FFFFFF] border-1 border-gray-200">
                 <!-- Left Side -->
                 <div class="">
                     <h1 class="text-[#002C5C] text-[18px] font-semibold">Innovation Labs</h1>
@@ -202,7 +207,7 @@
                 </div>
             </section>
             <!-- Jobs Cards 6 -->
-            <section class="w-10/12 mx-auto p-6  rounded-md mb-4 flex justify-between bg-[#FFFFFF]">
+            <section class="p-6  rounded-md mb-4 flex justify-between bg-[#FFFFFF] border-1 border-gray-200">
                 <!-- Left Side -->
                 <div class="">
                     <h1 class="text-[#002C5C] text-[18px] font-semibold">MegaCorp Solutions</h1>
@@ -230,7 +235,7 @@
                 </div>
             </section>
             <!-- Jobs Cards 7 -->
-            <section class="w-10/12 mx-auto p-6  rounded-md mb-4 flex justify-between bg-[#FFFFFF]">
+            <section class="p-6  rounded-md mb-4 flex justify-between bg-[#FFFFFF] border-1 border-gray-200">
                 <!-- Left Side -->
                 <div class="">
                     <h1 class="text-[#002C5C] text-[18px] font-semibold">StartupXYZ</h1>
@@ -258,7 +263,7 @@
                 </div>
             </section>
             <!-- Jobs Cards 8 -->
-            <section class="w-10/12 mx-auto p-6  rounded-md mb-4 flex justify-between ">
+            <section class="p-6  rounded-md mb-4 flex justify-between bg-[#FFFFFF] border-1 border-gray-200">
                 <!-- Left Side -->
                 <div class="">
                     <h1 class="text-[#002C5C] text-[18px] font-semibold">TechCorp Industries</h1>
