@@ -21,38 +21,7 @@ let currentStatus = 'all';
 calculateCount();
 
 
-// Toggle
-function toggleStyle(id){
-    allFilterBtn.classList.remove('bg-[#3B82F6]','text-white');
-    interviewFilterBtn.classList.remove('bg-[#3B82F6]','text-white');
-    rejectedFilterBtn.classList.remove('bg-[#3B82F6]','text-white');
 
-    const selected = document.getElementById(id);
-    selected.classList.add('bg-[#3B82F6]','text-white')
-
-    currentStatus = id;
-    // console.log(currentStatus)
-
-    if(id == 'interview-filter-btn'){
-        allCards.classList.add('hidden');
-        filteredSection.classList.remove('hidden')
-        
-        renderInterview()
-        
-    }
-    else if(id == 'all-filter-btn'){
-        allCards.classList.remove('hidden');
-        filteredSection.classList.add('hidden')
-        
-    }
-    else if(id == 'rejected-filter-btn'){
-        allCards.classList.add('hidden');
-        filteredSection.classList.remove('hidden')
-       
-        renderRejected()
-    }
-    
-}
 
 mainContainer.addEventListener('click', function (event) {
     // console.log(event.target.classList.contains('interview-btn'))
@@ -65,9 +34,10 @@ mainContainer.addEventListener('click', function (event) {
         const condition = parent.querySelector('.condition').innerText;
         const description = parent.querySelector('.description').innerText;
 
-        parent.querySelector('.condition').innerText = 'Interview';
-        // condition.classList.remove('text-[#002C5C]', 'bg-[#EEF4FF]', 'btn-soft')
-        // condition.classList.add('btn-success')
+        const conditionBtn = parent.querySelector('.condition');
+        conditionBtn.innerText = 'Interview';
+        conditionBtn.classList.remove('text-[#002C5C]','bg-[#EEF4FF]', 'btn-soft', 'btn-error')
+        conditionBtn.classList.add('btn-success')
 
         const jobCardInfo = {
             companyName,
@@ -84,15 +54,15 @@ mainContainer.addEventListener('click', function (event) {
         }
 
         rejectedList = rejectedList.filter(job => job.companyName != jobCardInfo.companyName)
-        
-       
 
-        if(currentStatus == "rejected-filter-btn"){
+
+
+        if (currentStatus == "rejected-filter-btn") {
             renderRejected();
         }
 
-         calculateCount();
-      
+        calculateCount();
+
     }
     else if (event.target.classList.contains('rejected-btn')) {
         const parent = event.target.parentNode.parentNode;
@@ -103,9 +73,10 @@ mainContainer.addEventListener('click', function (event) {
         const condition = parent.querySelector('.condition').innerText;
         const description = parent.querySelector('.description').innerText;
 
-        parent.querySelector('.condition').innerText = 'Rejected';
-        // condition.classList.remove('text-[#002C5C]', 'bg-[#EEF4FF]', 'btn-soft')
-        // condition.classList.add('btn-error')
+        const conditionBtn = parent.querySelector('.condition');
+        conditionBtn.innerText = 'Rejected';
+        conditionBtn.classList.remove('text-[#002C5C]','bg-[#EEF4FF]', 'btn-soft', 'btn-success')
+        conditionBtn.classList.add('btn-error')
 
         const jobCardInfo = {
             companyName,
@@ -116,24 +87,43 @@ mainContainer.addEventListener('click', function (event) {
         };
 
         const jobAdded = rejectedList.find(job => job.companyName == jobCardInfo.companyName);
-        
+
         if (!jobAdded) {
             rejectedList.push(jobCardInfo)
-            
+
         }
 
         interviewList = interviewList.filter(job => job.companyName != jobCardInfo.companyName)
 
-        
 
-        if(currentStatus == "interview-filter-btn"){
+
+        if (currentStatus == "interview-filter-btn") {
             renderInterview();
-            
+
         }
 
         calculateCount();
 
     }
+    else if(event.target.classList.contains('delete-btn')){
+        const parent = event.target.parentNode.parentNode;
+        const companyName = parent.querySelector('.company-name').innerText;
+
+        parent.remove();
+        rejectedList = rejectedList.filter(job => job.companyName != jobCardInfo.companyName)
+        interviewList = interviewList.filter(job => job.companyName != jobCardInfo.companyName)
+
+        calculateCount();
+
+        if(currentStatus == 'interveiw-filter-btn'){
+            renderInterview();
+        }
+        else if(currentStatus == 'rejected-filter-btn'){
+            renderRejected();
+        }
+
+    }
+
 })
 
 function renderInterview() {
@@ -161,11 +151,11 @@ function renderInterview() {
 
                 <!-- Right Side -->
                 <div class="">
-                    <button class="btn rounded-full"><i class="fa-regular fa-trash-can"></i></button>
+                    <button class="btn delete-btn rounded-full"><i class="fa-regular fa-trash-can pointer-events-none"></i></button>
                 </div>
         `
         filteredSection.appendChild(div)
-        
+
     }
 }
 function renderRejected() {
@@ -193,10 +183,10 @@ function renderRejected() {
 
                 <!-- Right Side -->
                 <div class="">
-                    <button class="btn rounded-full"><i class="fa-regular fa-trash-can"></i></button>
+                    <button class="btn delete-btn rounded-full"><i class="fa-regular fa-trash-can pointer-events-none"></i></button>
                 </div>
         `
         filteredSection.appendChild(div)
     }
-    
+
 }
