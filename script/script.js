@@ -8,6 +8,7 @@ let buttons = document.getElementById('buttons');
 let mainContainer = document.querySelector('main');
 let filteredSection = document.getElementById('filtered-section');
 let interviewBtn = document.getElementById('interview-btn');
+let noJobs = document.getElementById('no-jobs');
 
 const allFilterBtn = document.getElementById('all-filter-btn')
 const interviewFilterBtn = document.getElementById('interview-filter-btn')
@@ -15,7 +16,7 @@ const rejectedFilterBtn = document.getElementById('rejected-filter-btn')
 
 let interviewList = [];
 let rejectedList = [];
-let currentStatus = 'all';
+let currentStatus = '';
 // console.log(interviewCount.innerText, 'of', availableJobs.innerText, 'jobs')
 // Calculate the counters
 calculateCount();
@@ -36,7 +37,7 @@ mainContainer.addEventListener('click', function (event) {
 
         const conditionBtn = parent.querySelector('.condition');
         conditionBtn.innerText = 'Interview';
-        conditionBtn.classList.remove('text-[#002C5C]','bg-[#EEF4FF]', 'btn-soft', 'btn-error')
+        conditionBtn.classList.remove('text-[#002C5C]', 'bg-[#EEF4FF]', 'btn-soft', 'btn-error')
         conditionBtn.classList.add('btn-success')
 
         const jobCardInfo = {
@@ -75,7 +76,7 @@ mainContainer.addEventListener('click', function (event) {
 
         const conditionBtn = parent.querySelector('.condition');
         conditionBtn.innerText = 'Rejected';
-        conditionBtn.classList.remove('text-[#002C5C]','bg-[#EEF4FF]', 'btn-soft', 'btn-success')
+        conditionBtn.classList.remove('text-[#002C5C]', 'bg-[#EEF4FF]', 'btn-soft', 'btn-success')
         conditionBtn.classList.add('btn-error')
 
         const jobCardInfo = {
@@ -105,7 +106,7 @@ mainContainer.addEventListener('click', function (event) {
         calculateCount();
 
     }
-    else if(event.target.classList.contains('delete-btn')){
+    else if (event.target.classList.contains('delete-btn')) {
         const parent = event.target.parentNode.parentNode;
         const companyName = parent.querySelector('.company-name').innerText;
 
@@ -115,10 +116,10 @@ mainContainer.addEventListener('click', function (event) {
 
         calculateCount();
 
-        if(currentStatus == 'interveiw-filter-btn'){
+        if (currentStatus == 'interveiw-filter-btn') {
             renderInterview();
         }
-        else if(currentStatus == 'rejected-filter-btn'){
+        else if (currentStatus == 'rejected-filter-btn') {
             renderRejected();
         }
 
@@ -190,3 +191,20 @@ function renderRejected() {
     }
 
 }
+
+/* if (interviewList.length == 0) {
+    noJobs.classList.remove('hidden')
+    allCards.classList.add('hidden');
+    filteredSection.classList.add('hidden');
+}
+else if (allCards.length == 0) {
+    noJobs.classList.remove('hidden')
+    allCards.classList.add('hidden');
+    filteredSection.classList.add('hidden');
+
+}
+else if (rejectedList.length == 0) {
+    noJobs.classList.remove('hidden')
+    allCards.classList.add('hidden');
+    filteredSection.classList.add('hidden');
+}  */
