@@ -32,7 +32,7 @@
         <h1 class="text-2xl sm:text-[32px] text-[#002C5C] font-bold mb-5">Job Application Tracker</h1>
         <div class="main-div grid grid-cols-1 sm:grid-cols-3 gap-4">
             <div class="max-w-[360px] bg-base-300 px-5 py-3 rounded-md bg-[#FFFFFF] border-1 border-gray-200">
-                <p >Total</p>
+                <p>Total</p>
                 <h1 id="total-jobs" class="text-2xl text-[#002C5C] font-bold">8</h1>
             </div>
             <div class="max-w-[360px] bg-base-300 px-5 py-3 rounded-md bg-[#FFFFFF] border-1 border-gray-200">
@@ -56,29 +56,33 @@
 
         <!-- Buttons -->
         <section id="buttons" class="w-10/12 mx-auto flex gap-2 mb-4">
-            <button id="all-filter-btn" onclick="toggleStyle('all-filter-btn')" class="btn w-[80px] bg-[#3B82F6] text-white text-[12px] font-semibold">All</button>
-            <button id="interview-filter-btn" onclick="toggleStyle('interview-filter-btn')" class="btn w-[80px] text-[12px] font-semibold">Interview</button>
-            <button id="rejected-filter-btn" onclick="toggleStyle('rejected-filter-btn')" class="btn w-[80px] text-[12px] font-semibold">Rejected</button>
+            <button id="all-filter-btn" onclick="toggleStyle('all-filter-btn')"
+                class="btn w-[80px] bg-[#3B82F6] text-white text-[12px] font-semibold">All</button>
+            <button id="interview-filter-btn" onclick="toggleStyle('interview-filter-btn')"
+                class="btn w-[80px] text-[12px] font-semibold">Interview</button>
+            <button id="rejected-filter-btn" onclick="toggleStyle('rejected-filter-btn')"
+                class="btn w-[80px] text-[12px] font-semibold">Rejected</button>
         </section>
 
         <!-- No Jobs Available Section -->
-         <section id="no-jobs" class="w-10/12 mx-auto bg-[#FFFFFF] text-center border-1 border-gray-200 rounded-md mb-3 hidden">
+        <section id="no-jobs"
+            class="w-10/12 mx-auto bg-[#FFFFFF] text-center border-1 border-gray-200 rounded-md mb-3 hidden">
             <div class="grid justify-center pt-24 mb-5">
-                <img src="/images/jobs.png" alt="" class="">
+                <img src="images/jobs.png" alt="" class="">
             </div>
             <h1 class="text-[#002C5C] font-semibold">No Jobs Available</h1>
             <p class="text-[14px] text-[#64748B] pb-24">Check back soon for new job opportunities</p>
-         </section>
+        </section>
 
         <!-- After Filter -->
-         <section id="filtered-section" class="w-10/12 mx-auto hidden">
+        <section id="filtered-section" class="w-10/12 mx-auto hidden">
 
-         </section>
+        </section>
 
         <!-- All Cards -->
         <section id="all-cards" class="w-10/12 mx-auto">
             <!-- Jobs Cards 1 -->
-             <section class="p-6 rounded-md mb-4 flex justify-between bg-[#FFFFFF] border-1 border-gray-200">
+            <section class="p-6 rounded-md mb-4 flex justify-between bg-[#FFFFFF] border-1 border-gray-200">
                 <!-- Left Side -->
                 <div class="">
                     <h1 class="company-name text-[#002C5C] text-[18px] font-semibold">Mobile First Corp</h1>
@@ -88,8 +92,9 @@
                         Full-time
                         •
                         $130,000 - $175,000</p>
-                   <button class="condition text-[#002C5C] btn btn-soft bg-[#EEF4FF]">NOT APPLIED</button>
-                    <p class="description text-[14px] text-[#323B49] my-5">Build cross-platform mobile applications using React
+                    <button class="condition text-[#002C5C] btn btn-soft bg-[#EEF4FF]">NOT APPLIED</button>
+                    <p class="description text-[14px] text-[#323B49] my-5">Build cross-platform mobile applications
+                        using React
                         Native.
                         Work on products used by millions of users worldwide.</p>
 
@@ -102,7 +107,8 @@
 
                 <!-- Right Side -->
                 <div class="">
-                    <button class="delete-btn btn rounded-full"><i class="fa-regular fa-trash-can pointer-events-none"></i></button>
+                    <button class="delete-btn btn rounded-full"><i
+                            class="fa-regular fa-trash-can pointer-events-none"></i></button>
                 </div>
             </section>
             <!-- Jobs Cards 2 -->
@@ -117,7 +123,8 @@
                         •
                         $80,000 - $120,000</p>
                     <button class="condition text-[#002C5C] btn btn-soft bg-[#EEF4FF]">NOT APPLIED</button>
-                    <p class="description text-[14px] text-[#323B49] my-5">Create stunning web experiences for high-profile clients.
+                    <p class="description text-[14px] text-[#323B49] my-5">Create stunning web experiences for
+                        high-profile clients.
                         Must have portfolio and experience with modern web design trends.</p>
 
                     <!-- Buttons- Interview and Rejected -->
@@ -129,7 +136,8 @@
 
                 <!-- Right Side -->
                 <div class="">
-                    <button class="btn delete-btn rounded-full"><i class="fa-regular fa-trash-can pointer-events-none"></i></button>
+                    <button class="btn delete-btn rounded-full"><i
+                            class="fa-regular fa-trash-can pointer-events-none"></i></button>
                 </div>
             </section>
             <!-- Jobs Cards 3 -->
@@ -144,7 +152,8 @@
                         •
                         $125,000 - $165,000</p>
                     <button class="condition text-[#002C5C] btn btn-soft bg-[#EEF4FF]">NOT APPLIED</button>
-                    <p class="description text-[14px] text-[#323B49] my-5">Create stunning web experiences for high-profile clients.
+                    <p class="description text-[14px] text-[#323B49] my-5">Create stunning web experiences for
+                        high-profile clients.
                         Must have portfolio and experience with modern web design trends.</p>
 
                     <!-- Buttons- Interview and Rejected -->
@@ -156,7 +165,8 @@
 
                 <!-- Right Side -->
                 <div class="">
-                    <button class="delete-btn btn rounded-full"><i class="fa-regular fa-trash-can pointer-events-none"></i></button>
+                    <button class="delete-btn btn rounded-full"><i
+                            class="fa-regular fa-trash-can pointer-events-none"></i></button>
                 </div>
             </section>
             <!-- Jobs Cards 4 -->
@@ -171,7 +181,8 @@
                         •
                         $140,000 - $190,000</p>
                     <button class="condition text-[#002C5C] btn btn-soft bg-[#EEF4FF]">NOT APPLIED</button>
-                    <p class="description text-[14px] text-[#323B49] my-5">Design and maintain scalable backend systems using Python
+                    <p class="description text-[14px] text-[#323B49] my-5">Design and maintain scalable backend systems
+                        using Python
                         and
                         AWS. Work with modern DevOps practices and cloud infrastructure.</p>
 
@@ -184,7 +195,8 @@
 
                 <!-- Right Side -->
                 <div class="">
-                    <button class="btn delete-btn rounded-full"><i class="fa-regular fa-trash-can pointer-events-none"></i></button>
+                    <button class="btn delete-btn rounded-full"><i
+                            class="fa-regular fa-trash-can pointer-events-none"></i></button>
                 </div>
             </section>
             <!-- Jobs Cards 5 -->
@@ -199,10 +211,11 @@
                         •
                         $110,000 - $150,000</p>
                     <button class="condition text-[#002C5C] btn btn-soft bg-[#EEF4FF]">NOT APPLIED</button>
-                    <p class="description text-[14px] text-[#323B49] my-5">Create beautiful and functional user interfaces for our
+                    <p class="description text-[14px] text-[#323B49] my-5">Create beautiful and functional user
+                        interfaces for our
                         suite
                         of products. Strong design skills and frontend development expertise required.</p>
- 
+
                     <!-- Buttons- Interview and Rejected -->
                     <div class="flex gap-2">
                         <button class="interview-btn btn btn-outline btn-success">INTERVIEW</button>
@@ -212,7 +225,8 @@
 
                 <!-- Right Side -->
                 <div class="">
-                    <button class="btn delete-btn rounded-full"><i class="fa-regular fa-trash-can pointer-events-none"></i></button>
+                    <button class="btn delete-btn rounded-full"><i
+                            class="fa-regular fa-trash-can pointer-events-none"></i></button>
                 </div>
             </section>
             <!-- Jobs Cards 6 -->
@@ -227,7 +241,8 @@
                         •
                         $130,000 - $170,00</p>
                     <button class="condition text-[#002C5C] btn btn-soft bg-[#EEF4FF]">NOT APPLIED</button>
-                    <p class="description text-[14px] text-[#323B49] my-5">Build enterprise applications with JavaScript and modern
+                    <p class="description text-[14px] text-[#323B49] my-5">Build enterprise applications with JavaScript
+                        and modern
                         frameworks. We offer competitive compensation, health insurance, and professional development
                         opportunities.</p>
 
@@ -240,7 +255,8 @@
 
                 <!-- Right Side -->
                 <div class="">
-                    <button class="btn delete-btn rounded-full"><i class="fa-regular fa-trash-can pointer-events-none"></i></button>
+                    <button class="btn delete-btn rounded-full"><i
+                            class="fa-regular fa-trash-can pointer-events-none"></i></button>
                 </div>
             </section>
             <!-- Jobs Cards 7 -->
@@ -255,7 +271,8 @@
                         •
                         $120,000 - $160,000</p>
                     <button class="condition text-[#002C5C] btn btn-soft bg-[#EEF4FF]">NOT APPLIED</button>
-                    <p class="description text-[14px] text-[#323B49] my-5">Join our fast-growing startup and work on our core
+                    <p class="description text-[14px] text-[#323B49] my-5">Join our fast-growing startup and work on our
+                        core
                         platform.
                         Experience with Node.js and React required. Great benefits and equity package included.</p>
 
@@ -268,7 +285,8 @@
 
                 <!-- Right Side -->
                 <div class="">
-                    <button class="btn delete-btn rounded-full"><i class="fa-regular fa-trash-can pointer-events-none"></i></button>
+                    <button class="btn delete-btn rounded-full"><i
+                            class="fa-regular fa-trash-can pointer-events-none"></i></button>
                 </div>
             </section>
             <!-- Jobs Cards 8 -->
@@ -283,7 +301,8 @@
                         •
                         $130,000 - $175,000</p>
                     <button class="condition text-[#002C5C] btn btn-soft bg-[#EEF4FF]">NOT APPLIED</button>
-                    <p class="description text-[14px] text-[#323B49] my-5">We are looking for an experienced Frontend Developer to
+                    <p class="description text-[14px] text-[#323B49] my-5">We are looking for an experienced Frontend
+                        Developer to
                         build scalable web applications using React and TypeScript. You will work with a talented team
                         on cutting-edge projects.</p>
 
@@ -296,7 +315,8 @@
 
                 <!-- Right Side -->
                 <div class="">
-                    <button class="btn delete-btn rounded-full"><i class="fa-regular fa-trash-can pointer-events-none"></i></button>
+                    <button class="btn delete-btn rounded-full"><i
+                            class="fa-regular fa-trash-can pointer-events-none"></i></button>
                 </div>
             </section>
         </section>
