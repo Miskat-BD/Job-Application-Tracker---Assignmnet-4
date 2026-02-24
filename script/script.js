@@ -140,6 +140,15 @@ mainContainer.addEventListener('click', function (event) {
 function renderInterview() {
     filteredSection.innerHTML = '';
 
+    if (interviewList.length === 0) {
+        noJobs.classList.remove('hidden');
+        filteredSection.classList.add('hidden');
+        return;
+    } else {
+        noJobs.classList.add('hidden');
+        filteredSection.classList.remove('hidden');
+    }
+
     for (const i of interviewList) {
         // console.log(i.companyName)
         let div = document.createElement('div');
@@ -172,6 +181,15 @@ function renderInterview() {
 }
 function renderRejected() {
     filteredSection.innerHTML = '';
+
+     if (rejectedList.length === 0) {
+        noJobs.classList.remove('hidden');
+        filteredSection.classList.add('hidden');
+        return;
+    } else {
+        noJobs.classList.add('hidden');
+        filteredSection.classList.remove('hidden');
+    }
 
     for (const i of rejectedList) {
 
