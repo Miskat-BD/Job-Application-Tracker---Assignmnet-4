@@ -36,10 +36,28 @@ Output: When we click the div it console Parent Clicked. And when we click butto
 ### **Question-4. What is Event Delegation in JavaScript? Why is it useful?**
 Answer: Event Delegation means handling the child with an event listener on the parent. It uses in Dynamin Element. Its performance is good. And requires fewer event listeners.
 Example:		let mainContainer = document.querySelector('main');
-			mainContainer.addEventListener('click', function (event) {
-    if (event.target.classList.contains('btn-className')) {
-		console.log(“Button Clicked”)
-}}
+			    mainContainer.addEventListener('click', function (event) {
+                if (event.target.classList.contains('btn-className')) {
+		            console.log(“Button Clicked”)
+}});
+
+### **question-5.What is the difference between preventDefault() and stopPropagation() methods?**
+
+Answer: preventDefault: Its disables the browser's default behavior.
+Example: <a href=”https://google.com” id=”link”>Google</a>
+	document.getElementById(‘link’).addEventListener(‘click’,function(event){
+		event.preventDefault();
+	});
+
+Now clicking on the link will not take to the Google.Because we have turned off the browser's default action.
+
+stopPropagation:It stops event bubbling and event capturng.It means the event will not go to the parent .
+Example:    		child.addEventListener("click", function(e){
+   				        e.stopPropagation();
+   				         console.log("Child");
+});
+            Now when the child clicks, the parent's event will no longer be triggered.
+
 
 
 
