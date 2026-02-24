@@ -143,6 +143,7 @@ function renderInterview() {
     if (interviewList.length === 0) {
         noJobs.classList.remove('hidden');
         filteredSection.classList.add('hidden');
+        availableJobs.innerHTML = `${interviewList.length} of ${allCards.children.length} jobs`
         return;
     } else {
         noJobs.classList.add('hidden');
@@ -185,12 +186,14 @@ function renderRejected() {
      if (rejectedList.length === 0) {
         noJobs.classList.remove('hidden');
         filteredSection.classList.add('hidden');
+        availableJobs.innerHTML = `${rejectedList.length} of ${allCards.children.length} jobs `;
+
         return;
     } else {
         noJobs.classList.add('hidden');
         filteredSection.classList.remove('hidden');
     }
-
+    
     for (const i of rejectedList) {
 
         let div = document.createElement('div');
