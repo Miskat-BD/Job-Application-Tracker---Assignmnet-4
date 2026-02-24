@@ -110,14 +110,6 @@ mainContainer.addEventListener('click', function (event) {
         const parent = event.target.parentNode.parentNode;
         const companyName = parent.querySelector('.company-name').innerText;
 
-        const cards = allCards.children;
-        for(let card of cards){
-            const name = card.querySelector('.company-name').innerText;
-            if(name == companyName){
-                card.remove();
-                break;
-            }
-        }
 
         parent.remove();
         rejectedList = rejectedList.filter(job => job.companyName != companyName)
