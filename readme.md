@@ -1,4 +1,4 @@
-**Question-1. What is the difference between getElementById, getElementsByClassName, and querySelector / querySelectorAll?**
+### **Question-1. What is the difference between getElementById, getElementsByClassName, and querySelector / querySelectorAll?**
 
 Answer:
 getElementById:We select it with id. It return 1 element. And it is a fastest method of DOM.
@@ -15,14 +15,14 @@ Example: querySelector(‘.class-name’, ‘#id’, ‘h1’)
 
 
 
-**Question-2. How do you create and insert a new element into the DOM?**
+### **Question-2. How do you create and insert a new element into the DOM?**
 
 Answer:
 Step -1: Create an element -> const heading = document.createElement(‘h1’);
 Step -2: Write Something    -> heading.innerText = ‘Bangladesh’;
 Step -3: Insert the new elements -> document.body.appendChild(heading);
 
-**Question-3. What is Event Bubbling? And how does it work?**
+### **Question-3. What is Event Bubbling? And how does it work?**
 
 Answer: Event Bubbling means that the event rises from the lower element to the upper parent.
 Example: <div id="parent" onclick="console.log('Parent Clicked')">
@@ -31,6 +31,17 @@ Example: <div id="parent" onclick="console.log('Parent Clicked')">
 Output: When we click the div it console Parent Clicked. And when we click button it console 
 	Child Clicked
 	Parent Clicked
+
+
+### **Question-4. What is Event Delegation in JavaScript? Why is it useful?**
+Answer: Event Delegation means handling the child with an event listener on the parent. It uses in Dynamin Element. Its performance is good. And requires fewer event listeners.
+Example:		let mainContainer = document.querySelector('main');
+			mainContainer.addEventListener('click', function (event) {
+    if (event.target.classList.contains('btn-className')) {
+		console.log(“Button Clicked”)
+}}
+
+
 
 
 
